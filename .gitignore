@@ -1,2 +1,265 @@
-node-modules/
+# ============================================
+# Общие системные файлы
+# ============================================
+
+# Операционные системы
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*~
+
+# Временные файлы
+*.swp
+*.swo
+*~
+~$*
+*.bak
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+
+# Логи
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ============================================
+# Frontend (Vue.js 3 + TypeScript + Vite)
+# ============================================
+
+# Зависимости
 node_modules/
+.pnpm-store/
+.npm
+.yarn-integrity
+
+# Сборка
+dist/
+dist-ssr/
+*.tsbuildinfo
+.next/
+.nuxt/
+.target/
+out/
+.serverless/
+.fusebox/
+.dynamodb/
+
+# Кэш
+.cache/
+.parcel-cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.eslintcache
+
+# Coverage
+coverage/
+*.lcov
+.nyc_output/
+htmlcov/
+
+# Пакеты
+*.tgz
+
+# История REPL
+.node_repl_history
+
+# ============================================
+# Backend (Python + Pyramid + SQLAlchemy)
+# ============================================
+
+# Python кэш и скомпилированные файлы
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Пакеты и дистрибутивы
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Виртуальные окружения
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv
+.tox/
+.nox/
+
+# Тестирование и покрытие
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+.coverage
+htmlcov/
+test-results/
+test-reports/
+coverage.xml
+
+# Профилирование
+*.prof
+*.pstats
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Менеджеры пакетов
+.python-version
+Pipfile.lock
+poetry.lock
+.pdm.toml
+
+# ============================================
+# Базы данных
+# ============================================
+
+# SQLite базы данных (исключаем по умолчанию)
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Исключения для тестовых баз
+!database/test*.db
+
+# Исключения для существующих баз данных проекта
+!database/contacts.db
+!database/production.db
+
+# Миграции Alembic (исключаем сгенерированные версии)
+alembic/versions/*.py
+!alembic/versions/__init__.py
+
+# ============================================
+# IDE и редакторы
+# ============================================
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Другие редакторы
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.code-workspace
+
+# ============================================
+# Конфигурация и секреты
+# ============================================
+
+# Файлы окружения
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Секреты
+secrets.yml
+credentials.json
+service-account-key.json
+firebase-key.json
+*.pem
+*.key
+*.crt
+
+# ============================================
+# Дополнительные файлы
+# ============================================
+
+# Графические файлы (обычно не хранятся в репозитории)
+*.ai
+*.bmp
+*.gif
+*.ico
+*.jpeg
+*.jpg
+*.png
+*.psd
+*.svg
+*.tif
+*.tiff
+
+# Документы (обычно не хранятся в репозитории)
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.odt
+*.ods
+*.odp
+
+# Архивы
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Docker (переопределения)
+docker-compose.override.yml

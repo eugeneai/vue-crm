@@ -1,0 +1,23 @@
+# Основные зависимости
+SQLAlchemy>=2.0.0
+alembic>=1.13.0
+
+# Pyramid (веб-фреймворк)
+pyramid>=2.0.0
+pyramid_debugtoolbar>=4.11.0
+
+# GraphQL
+graphene>=3.0.0
+graphene-sqlalchemy>=3.0.0
+
+# Дополнительные утилиты
+python-dateutil>=2.8.0
+python-dotenv>=1.0.0
+
+# Для разработки и тестирования
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=23.0.0
+isort>=5.12.0
+flake8>=6.0.0
+mypy>=1.0.0
