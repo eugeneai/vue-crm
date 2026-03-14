@@ -2,15 +2,16 @@
 Backend пакет для личной CRM системы.
 """
 
-from pyramid.config import Configurator
-from pyramid.events import NewRequest
-from pyramid.events import subscriber
 import json
 
+# Импорты Pyramid отложены до вызова main() чтобы избежать проблем с pkg_resources
+# before pkgutil.ImpImporter patch is applied
 
-@subscriber(NewRequest)
+
 def add_cors_headers(event):
     """Добавление CORS заголовков ко всем ответам"""
+    from pyramid.events import NewRequest
+    
     if event.request.method == 'OPTIONS':
         # Предварительный запрос CORS
         event.request.response.headers.update({
@@ -58,6 +59,15 @@ def main(global_config, **settings):
     Returns:
         Pyramid WSGI приложение
     """
+    from pyramid.config import Configurator
+    from pyramid.events import NewRequest
+    from pyramid.events import subscriber
+    
+    # Декоратор нужно применить здесь, после импорта
+    @subscriber(NewRequest)
+    def add_cors_headers_wrapper(event):
+        return add_cors_headers(event)
+    
     config = Configurator(settings=settings)
     
     # Регистрируем кастомный JSON рендерер
@@ -80,6 +90,6 @@ def main(global_config, **settings):
     config.scan('.views')
     
     # Добавляем подписчика на события для CORS
-    config.add_subscriber(add_cors_headers, NewRequest)
+    config.add_subscriber(add_cors_headers_wrapper, NewRequest)
     
     return config.make_wsgi_app()

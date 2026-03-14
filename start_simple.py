@@ -20,12 +20,12 @@ if not hasattr(pkgutil, 'ImpImporter'):
     pkgutil.ImpImporter = ImpImporter
     print("Applied pkgutil.ImpImporter compatibility patch for Python 3.12+")
 
-# Now we can safely import Pyramid
-from pyramid.config import Configurator
-from pyramid.response import Response
+# Now we can safely import non-Pyramid modules
 from waitress import serve
 from sqlalchemy import engine_from_config
 from sqlalchemy.orm import sessionmaker, scoped_session
+
+# Pyramid imports will be done inside functions after patch is applied
 
 def main():
     # Database configuration - use absolute path
